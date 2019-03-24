@@ -1,8 +1,4 @@
-https://support.plesk.com/hc/en-us/articles/213374189-How-to-enable-MySQL-logging- 
-
-- Only reflected XSS
-
-# LAF
+# laf
 > A language application firewall  
 > Only PHP is currently supported
 
@@ -25,7 +21,7 @@ https://support.plesk.com/hc/en-us/articles/213374189-How-to-enable-MySQL-loggin
 ?>
 ```
 
-when yourcode.php contains a simulated XSS attack :
+when yourcode.php could be attacked (in this example a simulated XSS attack) :
 ```php
 <?php
 
@@ -35,7 +31,7 @@ $vulnparam = $detector->getHttprequest()->getRequest()->query->get("vuln");
 echo "<a href=\"$vulnparam\"></a>";
 ```
 
-This alarm is generated :
+this alarm is generated :
 ```javascript
 {
   [0]=>

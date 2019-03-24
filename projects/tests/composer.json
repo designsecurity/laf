@@ -1,6 +1,6 @@
 {
-    "name": "PHPIDS",
-    "description": "PHPIDS",
+    "name": "laf",
+    "description": "laf",
     "license": "MIT",
     "authors": [
         {
@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": "^7.0",
-        "Ids/package": "@dev"
+        "laf/package": "@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0"
