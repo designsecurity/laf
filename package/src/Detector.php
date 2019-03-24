@@ -1,6 +1,6 @@
 <?php
 
-namespace Ids;
+namespace laf;
 
 class Detector
 { 
@@ -16,11 +16,11 @@ class Detector
     public function __construct()
     {
         $this->alarms = [];
-        $this->httprequest = new \Ids\Http\Request;
+        $this->httprequest = new \laf\Http\Request;
         
-        $this->sqlinjection = new \Ids\Detection\SqlInjection($this);
-        $this->xss = new \Ids\Detection\Xss($this);
-        $this->cookietheft = new \Ids\Detection\CookieTheft($this);
+        $this->sqlinjection = new \laf\Detection\SqlInjection($this);
+        $this->xss = new \laf\Detection\Xss($this);
+        $this->cookietheft = new \laf\Detection\CookieTheft($this);
         
         $this->options = new Options;
         $this->configurationFile = null;

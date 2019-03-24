@@ -1,6 +1,6 @@
 <?php
 
-namespace Ids\Http;
+namespace laf\Http;
 
 class Request
 {

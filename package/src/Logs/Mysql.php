@@ -1,6 +1,6 @@
 <?php
 
-namespace Ids\Logs;
+namespace laf\Logs;
 
 class Mysql
 {

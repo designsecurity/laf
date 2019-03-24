@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/designsecurity/laf.svg?branch=master)](https://travis-ci.org/designsecurity/laf) [![Packagist](https://img.shields.io/packagist/v/designsecurity/laf.svg)](https://packagist.org/packages/designsecurity/laf) [![Packagist](https://img.shields.io/packagist/l/designsecurity/laf.svg)](LICENSE)
 ---
 ## Example
-- Embed your code between detector->start() and detector->finish()
+- Embed your code between $detector->start() and $detector->finish()
 - If attacks are detected, alarms are generated and can be retrieved with $detector->getAlarms()
 
 ```php

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ids;
+namespace laf;
 
 class Options
 { 
@@ -10,7 +10,7 @@ class Options
     public function __construct()
     {
         $this->cookiename = "";
-        $this->decryptcookie = "Ids\Detection\CookieTheft::decipher";
+        $this->decryptcookie = "laf\Detection\CookieTheft::decipher";
     }
     
     public function setCookieName($cookiename)

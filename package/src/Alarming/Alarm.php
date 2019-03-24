@@ -1,6 +1,6 @@
 <?php
 
-namespace Ids\Alarming;
+namespace laf\Alarming;
 
 class Alarm
 { 

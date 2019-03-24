@@ -1,6 +1,6 @@
 <?php
 
-namespace Ids\Detection;
+namespace laf\Detection;
 
 class CookieTheft
 { 
@@ -32,7 +32,7 @@ class CookieTheft
                 $_SERVER["REMOTE_ADDR"] = "127.0.0.1";
                 
             if($plaintextcookie !== $_SERVER["REMOTE_ADDR"]) {
-                $alarm = new \Ids\Alarming\Alarm("identitytheft", "cookie $cookiename ($plaintextcookie) stolen by ".$_SERVER["REMOTE_ADDR"]."", 0, $datetime->format("ymd H:i:s"));
+                $alarm = new \laf\Alarming\Alarm("identitytheft", "cookie $cookiename ($plaintextcookie) stolen by ".$_SERVER["REMOTE_ADDR"]."", 0, $datetime->format("ymd H:i:s"));
                 $this->detector->addAlarm($alarm);
             }
         }

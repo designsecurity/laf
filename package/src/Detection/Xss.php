@@ -1,6 +1,6 @@
 <?php
 
-namespace Ids\Detection;
+namespace laf\Detection;
 
 class Xss
 { 
@@ -33,7 +33,7 @@ class Xss
         
         foreach($vulnerableParams as $key => $value) {
             if(strpos($page, $value) !== false) {
-                $alarm = new \Ids\Alarming\Alarm("xss", "in $key $value", 0, $time);
+                $alarm = new \laf\Alarming\Alarm("xss", "in $key $value", 0, $time);
                 $this->detector->addAlarm($alarm);
             }
         }

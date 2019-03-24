@@ -1,6 +1,6 @@
 <?php
 
-namespace Ids\Detection;
+namespace laf\Detection;
 
 class SqlInjection
 { 
@@ -139,13 +139,13 @@ class SqlInjection
     
     public function start()
     {
-        $this->mysqlParser = new \Ids\Logs\Mysql;
+        $this->mysqlParser = new \laf\Logs\Mysql;
         $this->mysqlParser->setLogFile("/var/log/mysql/queries.log");
         $timeNow = new \DateTime("now", new \DateTimeZone("Europe/Paris"));
         $timeNow->sub(new \DateInterval("PT1S"));
         
         $this->mysqlParser->setStartDate($timeNow);
-        $this->mysqlParser->setDetectionFunction("Ids\Detection\SqlInjection::detection");
+        $this->mysqlParser->setDetectionFunction("laf\Detection\SqlInjection::detection");
     }
     
     public function finish()
@@ -217,7 +217,7 @@ class SqlInjection
                     || (($nbQuotesStatement % 2 === 0 || $nbQuotesStatementTotal % 2 === 0) 
                         && $numstatements % 2 === 1)) {
                         
-                    $alarm = new \Ids\Alarming\Alarm("sqlinjection", "in $query $key $value", 0, $time);
+                    $alarm = new \laf\Alarming\Alarm("sqlinjection", "in $query $key $value", 0, $time);
                     $detector->addAlarm($alarm);
                     break;
                 }

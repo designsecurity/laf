@@ -1,10 +1,10 @@
 <?php
 
-namespace Ids;
+namespace laf;
 
 class Lang
 {
-    const GLOBAL_ERROR = "Ids error\n";
+    const GLOBAL_ERROR = "laf error\n";
     const GLOBAL_CHECK_CONFIG = "Check your configuration file :\n";
 
     const UNABLE_TO_PARSER_YAML =

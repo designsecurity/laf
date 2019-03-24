@@ -10,7 +10,7 @@ class RunTest extends TestCase
      */
     public function testSecurity($file, $expectedAlarms)
     {
-        $detector = new Ids\Detector;
+        $detector = new laf\Detector;
         $detector->start();
         
         include($file);
@@ -44,7 +44,7 @@ class RunTest extends TestCase
             ],
             [
                 "./tests/cookietheft/1.php",
-                [["identitytheft", "1' OR 1=1"]]
+                [["identitytheft", "cookie id (127.0.0.2) stolen by "]]
             ]
         ];
         
