@@ -2,6 +2,14 @@
 
 namespace laf\Logs;
 
+/*
+/etc/myc.cnf
+
+[mysqld]
+general_log     = on
+general_log_file = /var/log/mysql/queries.log
+*/
+
 class Mysql
 {
     private $logFile;

@@ -9,6 +9,7 @@ class Detector
     private $sqlinjection;
     private $xss;
     private $cookietheft;
+    private $tlsmitm;
     private $httprequest;
     private $alarms;
     private $configurationFile;
@@ -21,9 +22,17 @@ class Detector
         $this->sqlinjection = new \laf\Detection\SqlInjection($this);
         $this->xss = new \laf\Detection\Xss($this);
         $this->cookietheft = new \laf\Detection\CookieTheft($this);
+        $this->tlsmitm = new \laf\Detection\TLSmitm($this);
+        $this->tlsmitm->loadMitmFromFile(dirname(__FILE__)."/Detection/MITMfingerprints/additions.txt");
+        $this->tlsmitm->loadMitmFromFile(dirname(__FILE__)."/Detection/MITMfingerprints/mitm.txt");
         
         $this->options = new Options;
         $this->configurationFile = null;
+    }
+    
+    public function getTLSmitm()
+    {
+        return $this->tlsmitm;
     }
     
     public function addAlarm($alarm)
@@ -46,6 +55,7 @@ class Detector
         $this->sqlinjection->start();
         $this->xss->start();
         $this->cookietheft->start();
+        $this->tlsmitm->start();
     }
     
     public function finish()
@@ -53,6 +63,7 @@ class Detector
         $this->sqlinjection->finish();
         $this->xss->finish();
         $this->cookietheft->finish();
+        $this->tlsmitm->finish();
     }
     
     public function getHttprequest()
