@@ -21,7 +21,7 @@
 ?>
 ```
 
-when yourcode.php could be attacked (in this example a simulated XSS attack) :
+when yourcode.php is vulnerable to an attack (in this example a simulated XSS attack) :
 ```php
 <?php
 
@@ -35,15 +35,15 @@ this alarm is generated :
 ```javascript
 {
   [0]=>
-  object(Ids\Alarming\Alarm)#20 (4) {
-    ["attack":"Ids\Alarming\Alarm":private]=>
+  object(laf\Alarming\Alarm)#24 (4) {
+    ["attack":"laf\Alarming\Alarm":private]=>
     string(3) "xss"
-    ["description":"Ids\Alarming\Alarm":private]=>
+    ["description":"laf\Alarming\Alarm":private]=>
     string(38) "in vuln ee" onClick=alert('eee') "boum"
-    ["score":"Ids\Alarming\Alarm":private]=>
+    ["score":"laf\Alarming\Alarm":private]=>
     int(0)
-    ["time":"Ids\Alarming\Alarm":private]=>
-    string(15) "190324 14:43:41"
+    ["time":"laf\Alarming\Alarm":private]=>
+    string(15) "190725 09:19:13"
   }
 }
 ```
